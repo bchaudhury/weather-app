@@ -45,8 +45,8 @@ const Weather = () => {
 
     <div className='weather'>
         <div className='heading'>
-          <h3>Search Weather</h3>
-          <h2>-------------------------</h2>
+          <h2>Check Weather</h2>
+          <h2>--------------------------</h2>
         </div>
         <div className='search-bar'>
             <input ref= {inputRef} type='text' placeholder='Search' />
