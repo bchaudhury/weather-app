@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './Weather.css';
 import search_icon from '../assets/search-icon.png';
+import my_icon from '../assets/Bhaskar.jpg';
 
 const API_KEY = "0797c8a3def440b5929105127211511";
 
@@ -8,6 +9,7 @@ const Weather = () => {
   
   const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const search = async (city) => {
 
@@ -42,22 +44,25 @@ const Weather = () => {
   }
 
   return (
-
+    
     <div className='weather'>
         <div className='heading'>
-          <h2>Check Weather</h2>
+          <img src={my_icon} alt=''className='myicon'/>
+          <h2>My Weather App</h2>
           <h2>--------------------------</h2>
         </div>
         <div className='search-bar'>
-            <input ref= {inputRef} type='text' placeholder='Search' />
-            <img src = {search_icon} alt="" onClick={()=>search(inputRef.current.value)}/>
+            <input ref= {inputRef} type='text' placeholder='Enter city name' />
+            <img src = {search_icon} alt="search" onClick={()=>search(inputRef.current.value)} onMouseEnter={() => {
+          setShowMessage(true)}} onMouseLeave={() => {
+            setShowMessage(false)}}/>
         </div>
-
-        {weatherData?<>
+        {showMessage && <h5 className='searchmessage'>Search</h5>}
+        {weatherData?<> 
                  <img src={weatherData.Condition} alt='weather-icon' className='weathericon'/>
                  <p className='condition'>{weatherData.ConditionText}</p>
                  <p className='temperature'>{weatherData.Temperature}° C</p>
-         
+          
                  <div className='weather-data'>
                    <div className='col'>
                      <p className='humidity'>{weatherData.Humidity}%</p>

@@ -62,3 +62,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.searchmessage {
+    color: #c9e69a;
+}
+
+.myicon {
+    height: 50px;
+    width: 50px;
+    border: #626262;
+}
