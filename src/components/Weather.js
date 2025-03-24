@@ -28,12 +28,13 @@ const Weather = () => {
       }
       setWeatherData({
         City: data.location.name,
-        Temperature: data.current.temp_c,
+        Temperature: Math.floor(data.current.temp_c),
         Humidity: data.current.humidity,
         Condition: data.current.condition.icon,
         ConditionText: data.current.condition.text,
         WindSpeed: data.current.wind_kph,
-        Time: data.location.localtime
+        Time: data.location.localtime,
+        Feels: Math.floor(data.current.feelslike_c)
       })
 
     } catch (error) {
@@ -62,7 +63,7 @@ const Weather = () => {
                  <img src={weatherData.Condition} alt='weather-icon' className='weathericon'/>
                  <p className='condition'>{weatherData.ConditionText}</p>
                  <p className='temperature'>{weatherData.Temperature}° C</p>
-          
+                 <p className='feels'>Feels like: {weatherData.Feels}° C</p>
                  <div className='weather-data'>
                    <div className='col'>
                      <p className='humidity'>{weatherData.Humidity}%</p>
