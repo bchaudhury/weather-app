@@ -62,11 +62,11 @@ const Weather = () => {
         {weatherData?<> 
                  <img src={weatherData.Condition} alt='weather-icon' className='weathericon'/>
                  <p className='condition'>{weatherData.ConditionText}</p>
-                 <p className='temperature'>{weatherData.Temperature}° C</p>
-                 <p className='feels'>Feels like: {weatherData.Feels}° C</p>
+                 <p className='temperature'>{weatherData.Temperature}<span>° C</span></p>
+                 <p className='feels'>Feels like: {weatherData.Feels}<span>° C</span></p>
                  <div className='weather-data'>
                    <div className='col'>
-                     <p className='humidity'>{weatherData.Humidity}%</p>
+                     <p className='humidity'>{weatherData.Humidity}<span> %</span></p>
                      <span>Humidity</span>
                    </div>
                    <div className='col'>
