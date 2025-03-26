@@ -74,5 +74,10 @@
 }
 
 .feels {
-    color: #9ddbd2;;
+    color: #9ddbd2;
+}
+
+.col span {
+    color: #ca62d8;
+    font-style: italic;
 }

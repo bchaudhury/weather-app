@@ -34,7 +34,9 @@ const Weather = () => {
         ConditionText: data.current.condition.text,
         WindSpeed: data.current.wind_kph,
         Time: data.location.localtime,
-        Feels: Math.floor(data.current.feelslike_c)
+        Feels: Math.floor(data.current.feelslike_c),
+        AQI: data.current.air_quality.o3,
+        Country: data.location.country
       })
 
     } catch (error) {
@@ -66,7 +68,21 @@ const Weather = () => {
                  <p className='feels'>Feels like: {weatherData.Feels}<span>° C</span></p>
                  <div className='weather-data'>
                    <div className='col'>
-                     <p className='humidity'>{weatherData.Humidity}<span> %</span></p>
+                     <p className='city'>{weatherData.City}          </p>
+                     <span>City</span>
+                   </div>
+                   <div className='col'>
+                     <p className='country'>{weatherData.Country}         </p>
+                     <span>Country</span>
+                   </div>
+                   <div className='col'>
+                     <p className='time'>{weatherData.Time} </p>
+                     <span>Local Time</span>
+                   </div>
+                 </div>                 
+                 <div className='weather-data'>
+                   <div className='col'>
+                     <p className='humidity'>{weatherData.Humidity} %</p>
                      <span>Humidity</span>
                    </div>
                    <div className='col'>
@@ -74,8 +90,8 @@ const Weather = () => {
                      <span>Wind Speed</span>
                    </div>
                    <div className='col'>
-                     <p className='time'>{weatherData.Time}</p>
-                     <span>Local Time</span>
+                     <p className='aqi'>{weatherData.AQI}</p>
+                     <span>Air Quality</span>
                    </div>
                  </div>      
         </>:<></>} 
