@@ -10,7 +10,7 @@ const Weather = () => {
   
   const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
+  /*const [showMessage, setShowMessage] = useState(false);*/
   const [latlondata, setLatLonData] = useState(false);
 
   const search = async (city) => {
@@ -74,7 +74,7 @@ const Weather = () => {
             <input ref= {inputRef} type='text' placeholder='Enter city name' />
             <img src = {search_icon} alt="search" onClick={()=>search(inputRef.current.value)} />
         </div>
-        {showMessage && <h5 className='searchmessage'>Search</h5>}
+
         {weatherData?<> 
                  <img src={weatherData.Condition} alt='weather-icon' className='weathericon'/>
                  <p className='condition'>{weatherData.ConditionText}</p>
