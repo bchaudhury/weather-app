@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import './Weather.css';
 import search_icon from '../assets/search-icon.png';
 import my_icon from '../assets/Bhaskar.jpg';
+import sunicon from '../assets/sunrise_sunset.jpeg'
 
 const API_KEY = "0797c8a3def440b5929105127211511";
 
@@ -10,6 +11,7 @@ const Weather = () => {
   const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [latlondata, setLatLonData] = useState(false);
 
   const search = async (city) => {
 
@@ -19,6 +21,8 @@ const Weather = () => {
     }
 
     try {
+
+      // Get Weather data based on API Key and City
       const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=yes`;
       const response = await fetch(url);
       const data = await response.json();
@@ -36,7 +40,19 @@ const Weather = () => {
         Time: data.location.localtime,
         Feels: Math.floor(data.current.feelslike_c),
         AQI: data.current.air_quality.o3,
-        Country: data.location.country
+        Country: data.location.country,
+        Lattitude: data.location.lat,
+        Longitude: data.location.lon
+      })
+      
+      // Get Sunrise / Sunset timings based on lattitude and longitude
+      const urllatlon=`https://api.sunrisesunset.io/json?lat=${data.location.lat}&lng=${data.location.lon}`;
+      const responsel = await fetch(urllatlon);
+      const datal = await responsel.json();
+
+      setLatLonData({
+        Sunrise: datal.results.sunrise,
+        Sunset: datal.results.sunset
       })
 
     } catch (error) {
@@ -50,15 +66,13 @@ const Weather = () => {
     
     <div className='weather'>
         <div className='heading'>
-          <img src={my_icon} alt=''className='myicon'/>
+          <img src={my_icon} alt='' className='myicon'/>
           <h2>My Weather App</h2>
           <h2>--------------------------</h2>
         </div>
         <div className='search-bar'>
             <input ref= {inputRef} type='text' placeholder='Enter city name' />
-            <img src = {search_icon} alt="search" onClick={()=>search(inputRef.current.value)} onMouseEnter={() => {
-          setShowMessage(true)}} onMouseLeave={() => {
-            setShowMessage(false)}}/>
+            <img src = {search_icon} alt="search" onClick={()=>search(inputRef.current.value)} />
         </div>
         {showMessage && <h5 className='searchmessage'>Search</h5>}
         {weatherData?<> 
@@ -92,6 +106,19 @@ const Weather = () => {
                    <div className='col'>
                      <p className='aqi'>{weatherData.AQI}</p>
                      <span>Air Quality</span>
+                   </div>
+                 </div>
+                 <div className='weather-data'>
+                   <div className='col'>
+                     <p className='sunrise'>{latlondata.Sunrise}</p>
+                     <span>Sunrise</span>
+                   </div>
+                   <div>
+                     <img src={sunicon} alt='' className='icon'/>
+                   </div>
+                   <div className='col'>
+                     <p className='sunset'>{latlondata.Sunset}</p>
+                     <span>Sunset</span>
                    </div>
                  </div>      
         </>:<></>} 
