@@ -1,8 +1,9 @@
 .refresh p{
     text-align: center;
-    text-emphasis: none;
+    text-emphasis:initial;
     color: brown;
-    font-weight: 200;
+    font-weight: bold;
     font-size: medium;
     font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
 }
