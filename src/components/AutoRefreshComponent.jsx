@@ -5,7 +5,7 @@ const AutoRefreshComponent = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       window.location.reload();
-    }, 60000); // Refresh every 60 seconds
+    }, 1200000); // Refresh every 1200 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
@@ -13,7 +13,7 @@ const AutoRefreshComponent = () => {
 
   return (
     <div className='refresh'>
-      <p>The information is available for 60 seconds</p>
+      {/* <p>The information will be displayed for 60 seconds</p> */}
     </div>
   );
 };

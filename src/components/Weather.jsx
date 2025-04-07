@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './Weather.css';
 import search_icon from '../assets/search-icon.png';
-import my_icon from '../assets/Bhaskar.jpg';
+import mylogo from '../assets/mylogo.jpg';
 import sunicon from '../assets/sunrise_sunset.jpeg'
 
 const API_KEY = "0797c8a3def440b5929105127211511";
@@ -32,13 +32,13 @@ const Weather = () => {
       }
       setWeatherData({
         City: data.location.name,
-        Temperature: Math.floor(data.current.temp_c),
+        Temperature: data.current.temp_c,
         Humidity: data.current.humidity,
         Condition: data.current.condition.icon,
         ConditionText: data.current.condition.text,
         WindSpeed: data.current.wind_kph,
         Time: data.location.localtime,
-        Feels: Math.floor(data.current.feelslike_c),
+        Feels: data.current.feelslike_c,
         AQI: data.current.air_quality.o3,
         Country: data.location.country,
         Lattitude: data.location.lat,
@@ -66,9 +66,8 @@ const Weather = () => {
     
     <div className='weather'>
         <div className='heading'>
-          <img src={my_icon} alt='' className='myicon'/>
+          <img src={mylogo} alt='' className='myicon'/>
           <h2>My Weather App</h2>
-          <h2>--------------------------</h2>
         </div>
         <div className='search-bar'>
             <input ref= {inputRef} type='text' placeholder='Enter city name' />
@@ -78,19 +77,28 @@ const Weather = () => {
         {weatherData?<> 
                  <img src={weatherData.Condition} alt='weather-icon' className='weathericon'/>
                  <p className='condition'>{weatherData.ConditionText}</p>
-                 <p className='temperature'>{weatherData.Temperature}<span>° C</span></p>
-                 <p className='feels'>Feels like: {weatherData.Feels}<span>° C</span></p>
+                 
                  <div className='weather-data'>
-                   <div className='col'>
-                     <p className='city'>{weatherData.City}          </p>
+                  <div className='col'>
+                    <p className='temperature'>{weatherData.Temperature}<span> °C</span></p>
+                    <span className='temp'>Current Temperature</span>
+                  </div>
+                  <div className='col'>
+                    <p className='feels'>{weatherData.Feels}<span> °C</span></p>
+                    <span className='feels'>Feels Like</span>
+                  </div>
+                 </div>
+                 <div className='weather-data'>
+                   <div className='col'> 
+                     <p className='city'>{weatherData.City}</p>
                      <span>City</span>
                    </div>
                    <div className='col'>
-                     <p className='country'>{weatherData.Country}         </p>
+                     <p className='country'>{weatherData.Country}</p>
                      <span>Country</span>
                    </div>
                    <div className='col'>
-                     <p className='time'>{weatherData.Time} </p>
+                     <p className='time'>{weatherData.Time}</p>
                      <span>Local Time</span>
                    </div>
                  </div>                 
