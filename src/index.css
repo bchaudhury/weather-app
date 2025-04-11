@@ -9,5 +9,5 @@
 
 .app{
   min-height: 100vh;
-  display:contents;
+  display: grid;
 }
