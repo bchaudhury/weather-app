@@ -1,17 +1,11 @@
 .weather {
     place-self: center;
-    vertical-align: middle;
     padding: 40px;
     border-radius: 10px;
-    background-image: linear-gradient(45deg, #676767, #4d6985);
+    background-image: linear-gradient(45deg, #203a43, #8f83f8);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 450px;
-    height: 600px;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
-    margin-top: 1.5%;
 }
 
 .heading {
@@ -52,6 +46,7 @@
     background: #ebfffc;
     cursor: pointer;
 } 
+
 .temperature {
     color:  #eceef1;
     font-size: 20px;
@@ -69,13 +64,11 @@
 .location {
     color:  #ebfffc;
     font-size: 20px;
-
 }
 
 .condition {
     color:  #ebfffc;
     font-size: 18px;
-
 }
 
 .weather-data {
