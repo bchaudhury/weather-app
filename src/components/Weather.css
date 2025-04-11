@@ -1,5 +1,6 @@
 .weather {
     place-self: center;
+    vertical-align: middle;
     padding: 40px;
     border-radius: 10px;
     background-image: linear-gradient(45deg, #676767, #4d6985);
@@ -8,10 +9,13 @@
     align-items: center;
     justify-content: center;
     width: 450px;
+    height: 600px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+    margin-top: 1.5%;
 }
 
 .heading {
-    color: bisque;
+    color: rgb(250, 228, 204);
     text-align: center;
 }
 
