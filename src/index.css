@@ -10,7 +10,7 @@
 .app{
   min-height: 100vh;
   display: grid;
-  background: #dde2d1;
+  background: #eef1e3;
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
 }

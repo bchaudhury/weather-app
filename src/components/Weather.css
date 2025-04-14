@@ -1,16 +1,16 @@
 .weather {
     place-self: center;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    background-image: linear-gradient(45deg, #203a43, #8f83f8);
+    background-color:  #203a43;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300 px;
+    width: 200 px;
 }
 
 .heading {
-    color: rgb(250, 228, 204);
+    color: rgb(238, 196, 151);
     text-align: center;
 }
 
@@ -75,7 +75,7 @@
 .weather-data {
     width: 100%;
     margin-top: 20px;
-    color: #fff;
+    color: #f8f5f5;
     display: flex;
     justify-content: space-between;
 }
