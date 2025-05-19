@@ -67,7 +67,7 @@ const Weather = () => {
     <div className='weather'>
         <div className='heading'>
           <img src={mylogo} alt='' className='myicon'/>
-          <h2>My Weather App</h2>
+          <h2>Live Weather App</h2>
         </div>
         <div className='search-bar'>
             <input ref= {inputRef} type='text' placeholder='Enter city name' />
@@ -80,11 +80,11 @@ const Weather = () => {
                  
                  <div className='weather-data'>
                   <div className='col'>
-                    <p className='temperature'>{weatherData.Temperature}<span> °C</span></p>
+                    <p className='temperature'>{weatherData.Temperature}<span className='degree-text'>°C</span></p>
                     <span className='temp'>Current Temperature</span>
                   </div>
                   <div className='col'>
-                    <p className='feels'>{weatherData.Feels}<span> °C</span></p>
+                    <p className='feels'>{weatherData.Feels}<span className='degree-text'>°C</span></p>
                     <span className='feels'>Feels Like</span>
                   </div>
                  </div>
