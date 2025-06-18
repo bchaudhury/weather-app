@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import './Weather.css';
 import search_icon from '../assets/search-icon.png';
 import mylogo from '../assets/mylogo.jpg';
-import sunicon from '../assets/sunrise_sunset.jpeg'
+import sunicon from '../assets/sunrise-sunset.png'
 
 const API_KEY = "0797c8a3def440b5929105127211511";
 
@@ -37,6 +37,8 @@ const Weather = () => {
         Condition: data.current.condition.icon,
         ConditionText: data.current.condition.text,
         WindSpeed: data.current.wind_kph,
+        Direction: data.current.wind_dir,
+        UV: data.current.uv,
         Time: data.location.localtime,
         Feels: data.current.feelslike_c,
         AQI: data.current.air_quality.o3,
@@ -67,7 +69,7 @@ const Weather = () => {
     <div className='weather'>
         <div className='heading'>
           <img src={mylogo} alt='' className='myicon'/>
-          <h2>Live Weather App</h2>
+          <h2>Live Weather Condition</h2>
         </div>
         <div className='search-bar'>
             <input ref= {inputRef} type='text' placeholder='Enter city name' />
@@ -84,7 +86,7 @@ const Weather = () => {
                     <span className='temp'>Current Temperature</span>
                   </div>
                   <div className='col'>
-                    <p className='feels'>{weatherData.Feels}<span className='degree-text'>°C</span></p>
+                    <p className='feels'>{weatherData.Feels}<span className='degree-text1'>°C</span></p>
                     <span className='feels'>Feels Like</span>
                   </div>
                  </div>
@@ -98,8 +100,8 @@ const Weather = () => {
                      <span>Country</span>
                    </div>
                    <div className='col'>
-                     <p className='time'>{weatherData.Time}</p>
-                     <span>Local Time</span>
+                     <p className='time'>{weatherData.UV}</p>
+                     <span>UV Index</span>
                    </div>
                  </div>                 
                  <div className='weather-data'>
@@ -112,10 +114,20 @@ const Weather = () => {
                      <span>Wind Speed</span>
                    </div>
                    <div className='col'>
-                     <p className='aqi'>{weatherData.AQI}</p>
-                     <span>Air Quality</span>
+                     <p className='aqi'>{weatherData.Direction}</p>
+                     <span>Direction</span>
                    </div>
                  </div>
+                 <div className='weather-data'>
+                   <div className='col'>
+                     <p className='sunrise'>{weatherData.AQI}</p>
+                     <span>Air Quality</span>
+                   </div>
+                   <div className='col'>
+                     <p className='sunset'>{weatherData.Time}</p>
+                     <span>Last Update</span>
+                   </div>
+                 </div> 
                  <div className='weather-data'>
                    <div className='col'>
                      <p className='sunrise'>{latlondata.Sunrise}</p>
@@ -128,7 +140,7 @@ const Weather = () => {
                      <p className='sunset'>{latlondata.Sunset}</p>
                      <span>Sunset</span>
                    </div>
-                 </div>      
+                 </div>     
         </>:<></>} 
  
     </div>
