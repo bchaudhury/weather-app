@@ -125,7 +125,7 @@ const Weather = () => {
                    </div>
                    <div className='col'>
                      <p className='sunset'>{weatherData.Time}</p>
-                     <span>Last Update</span>
+                     <span>Local Time</span>
                    </div>
                  </div> 
                  <div className='weather-data'>

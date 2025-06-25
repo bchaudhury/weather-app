@@ -2,9 +2,12 @@
     place-self: center;
     padding: 2px;
     border-radius: 20px;
-    border: 2px solid #050505;
-    background: linear-gradient(to right, #1e3c72, #114297);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #0367fd;
+    background-image: url('../assets/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,15 +18,15 @@
 }
 
 .heading {
-    color: rgb(245, 244, 243);
+    color: rgb(20, 20, 20);
     text-align: center;
     padding: 10px;
 }
 
 .heading h2 {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
-    border-bottom: #eee5e5 solid 2px;
+    border-bottom: #9598a8 solid 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -46,9 +49,10 @@
     color: black;
     background: #ebfffc;
     font-size: 15px;
-    border: 2px solid #626262;
+    border: 2px solid black;
     transition: all 0.3s ease;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar img {
@@ -56,12 +60,12 @@
     padding: 15px;
     border-radius: 50%;
     background: white;
-    border: 2px solid #626262;
+    border: 2px solid black;
     cursor: pointer;
 } 
 
 .temperature {
-    color:  white;
+    color:  rgb(255, 255, 253);
     font-size: 20px;
     padding-top: 0;
     padding-bottom: 0;
@@ -100,7 +104,7 @@
 .weather-data {
     width: 100%;
     margin-top: 10px;
-    color: white;
+    color: rgb(250, 248, 248);
     display: flex;
     justify-content: space-between;
     word-wrap: break-word;
@@ -125,18 +129,18 @@
 }
 
 .col span {
-    color: #e0f805;
+    color: rgb(196, 216, 130);;
     font-style: italic;
     font-size: 14px;
 }
 
 .icon {
-    height: 35px;
-    width: 120px;
+    height: 40px;
+    width: 150px;
     margin-top: 0px;
     margin-bottom: 0px;
-    filter: brightness(100%);
-    filter: contrast(150%);
+    filter: brightness(0%);
+    filter: contrast(950%);
 }
 
 .weathericon {
@@ -153,7 +157,6 @@
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-
 }
 
 .weather-data .degree-text {
