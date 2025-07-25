@@ -62,7 +62,7 @@ const Weather = () => {
         console.error("Error in fetching weather data !!")
     }
 
-  }
+  };
 
   return (
     

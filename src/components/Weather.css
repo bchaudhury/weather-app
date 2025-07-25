@@ -18,7 +18,7 @@
 }
 
 .heading {
-    color: rgb(20, 20, 20);
+    color: rgb(243, 120, 120);
     text-align: center;
     padding: 10px;
 }
@@ -26,7 +26,7 @@
 .heading h2 {
     font-size: 18px;
     margin: 0;
-    border-bottom: #9598a8 solid 2px;
+    border-bottom: #3654fc solid 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -65,7 +65,7 @@
 } 
 
 .temperature {
-    color:  rgb(255, 255, 253);
+    color:  white;
     font-size: 20px;
     padding-top: 0;
     padding-bottom: 0;
@@ -94,7 +94,7 @@
 }
 
 .condition {
-    color:  white;
+    color:  rgb(5, 5, 5);
     font-size: 15px;
     padding-left: 5px;
     padding-top: 0;
@@ -104,7 +104,7 @@
 .weather-data {
     width: 100%;
     margin-top: 10px;
-    color: rgb(250, 248, 248);
+    color: white;
     display: flex;
     justify-content: space-between;
     word-wrap: break-word;
@@ -157,6 +157,7 @@
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    color: rgb(153, 65, 65)
 }
 
 .weather-data .degree-text {
